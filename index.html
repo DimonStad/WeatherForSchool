@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Стадницкий Дмитрий M33081</title>
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@515&di.." rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Assets/JS/add.js"></script>
+    <script src="Assets/JS/fetch.js"></script>
+    <script src="Assets/JS/button.js"></script>
+    <script src="Assets/JS/geolocation.js"></script>
+    <script src="Assets/JS/print.js"></script>
+
+
+</head>
+<body onresize="buttonWidth()">
+
+<header>
+    <h1 id="spb">Погода здесь</h1>
+    <button id="location_button" onclick="updateCurrentWeather()">Обновить геолокацию</button>
+</header>
+<main>
+    <section id="this_weather">
+        <h2 id="current_location">Загрузка...</h2>
+        <img src="image/14285.png" id="current_location_icon"/>
+        <h2 id="current_grad"></h2>
+        <ul id="contain">
+        </ul>
+    </section>
+    <div id="add_city">
+        <h2 id="my_cities">Избранное</h2>
+        <form id="plus" onsubmit="return false;">
+            <input id="add"  onclick="addEnter()" placeholder="Введите название города">
+            <button id="plus2" onclick="addCity()">+</button>
+        </form>
+    </div>
+    <section id="other_cities">
+    </section>
+</main>
+<template id="template-othercity">
+    <div class="classno">
+        <h3 class="name_of_other_city"></h3>
+        <p class="gra_of_other_city"></p>
+        <img class="other_city_icon" src="">
+        <button class="x" onclick="deleteCity(this)">×</button>
+    </div>
+    <ul class="details">
+    </ul>
+</template>
+<template id="loader">
+    <h3 class="name_of_other_city">Загрузка</h3>
+</template>
+<template id="template-contain">
+    <li class="wind">
+        <p class="hh">Ветер</p>
+        <p></p>
+    </li>
+    <li class="wind">
+        <p class="hh">Облачность</p>
+        <p></p>
+    </li>
+    <li class="wind">
+        <p class="hh">Давление</p>
+        <p></p>
+    </li>
+    <li class="wind">
+        <p class="hh">Влажность</p>
+        <p></p>
+    </li>
+    <li class="wind">
+        <p class="hh">Координаты</p>
+        <p></p>
+    </li>
+</template>
+</body>
+</html>
